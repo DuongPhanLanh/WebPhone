@@ -1,0 +1,10 @@
+@charset "UTF-8";
+
+.bg-blue {
+	background-color: #40c4ff;
+}
+
+.navbar .nav-item:hover .nav-link {
+	background-color: rgb(255, 128, 192);
+	border-radius: 20px;
+}
