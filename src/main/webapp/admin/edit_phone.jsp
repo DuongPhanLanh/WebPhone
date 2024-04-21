@@ -76,21 +76,32 @@
 					    	<option value="iOS"> iOS</option>
 					    	<option value="Other"> Other</option>
 					    	<option value="Android"> Android</option>
+					    	<option value="PK"> Phụ kiện</option>
 					    	<%
 					    	}else if("iOS".equals(p.getOperating())) {
 					    	%>
 					    	<option value="Other"> Other</option>
 					    	<option value="Android"> Android</option>
 					    	<option value="iOS"> iOS</option>
+					    	<option value="PK"> Phụ kiện</option>
 					    	<%
 					    	}else if("Other".equals(p.getOperating())) {
 					    	%>
 					    	<option value="Android"> Android</option>
 					    	<option value="iOS"> iOS</option>
 					    	<option value="Other"> Other</option>
+					    	<option value="PK"> Phụ kiện</option>
 					    	<%
-					    	}
-					    	%>
+					    	}else if("PK".equals(p.getOperating())) {
+						    %>
+						    <option value="Android"> Android</option>
+						    <option value="iOS"> iOS</option>
+						    <option value="Other"> Other</option>
+						    <option value="PK"> Phụ kiện</option>
+						    <%
+						    }
+						    %>
+					    	
 					    </select>
 					    
 					  </div>

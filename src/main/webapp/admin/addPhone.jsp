@@ -5,6 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Thêm sản phẩm</title>
 <%@include file="allCss.jsp" %>
 </head>
@@ -38,13 +39,13 @@
 					  <div class="form-group">
 					    <label for="exampleInputEmail1">Tên sản phẩm</label>
 					    <input type="text" class="form-control" id="exampleInputEmail1" 
-					    placeholder="namePhone"  name="pName">
+					    placeholder="namePhone"  name="pName" >
 					  </div>
 					
 					  <div class="form-group">
 					    <label for="exampleInputEmail1">Thuộc Hãng</label>
 					    <input type="text" class="form-control" id="exampleInputEmail1" 
-					    placeholder="Brand"  name="pBrand">
+					    placeholder="Brand"  name="pBrand" >
 					  </div>
 					  
 					  <%-- 
@@ -58,19 +59,19 @@
 					  <div class="form-group">
 					    <label for="exampleInputEmail1"> Giá</label>
 					    <input type="number" class="form-control" id="exampleInputPassword1" 
-					    placeholder="Price" name="pPrice">
+					    placeholder="Price" name="pPrice" >
 					  </div>
 					  
 					  <div class="form-group">
 					    <label for="exampleInputEmail1">Mô tả </label>
 					    <input type="text" class="form-control" id="exampleInputEmail1" 
-					    placeholder="description" name="description">
+					    placeholder="description" name="description" >
 					  </div>
 					  
 					  <div class="form-group">
 					    <label for="exampleInputEmail1">Thông tin bộ nhớ </label>
 					    <input type="text" class="form-control" id="exampleInputEmail1" 
-					    placeholder="memory" name="pMemory">
+					    placeholder="memory" name="pMemory" >
 					  </div>
 					  
 					  <div class="form-group">
@@ -81,6 +82,7 @@
 					    	<option value="Android"> Android</option>
 					    	<option value="iOS"> iOS</option>
 					    	<option value="Other"> Other</option>
+					    	<option value="PK"> Phụ kiện</option>
 					    </select>
 					    
 					  </div>

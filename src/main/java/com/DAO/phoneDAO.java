@@ -14,4 +14,20 @@ public interface phoneDAO {
 	public boolean updateEditPhone(phoneDtl p);
 	
 	public boolean deletePhone(int id);
+	
+	public List<phoneDtl> getAndroidPhone();
+	
+	public List<phoneDtl> getIosPhone();
+	
+	public List<phoneDtl> getOtherPhone();
+	
+	public List<phoneDtl> getPkPhone();
+	
+	public List<phoneDtl> getAllAndroidPhone();
+	
+	public List<phoneDtl> getAllIosPhone();
+	
+	public List<phoneDtl> getAllOtherPhone();
+	
+	public List<phoneDtl> getAllPkPhone();
 }

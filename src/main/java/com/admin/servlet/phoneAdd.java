@@ -22,7 +22,7 @@ public class phoneAdd extends HttpServlet {
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		
+		req.setCharacterEncoding("UTF-8");
 		try {
 			String namephone=req.getParameter("pName");
 			String brand=req.getParameter("pBrand");

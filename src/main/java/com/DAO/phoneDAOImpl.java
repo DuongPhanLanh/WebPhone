@@ -153,5 +153,269 @@ public class phoneDAOImpl implements phoneDAO {
 		return f;
 	}
 
+	@Override
+	public List<phoneDtl> getAndroidPhone() {
+		List<phoneDtl> list = new ArrayList<phoneDtl>();
+		phoneDtl p = null;
+		
+		try {
+			String sql = "SELECT * FROM phone_dtls WHERE operating=? ORDER BY id DESC";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setString(1, "Android");
+			ResultSet rs = ps.executeQuery();
+			
+			// so luong co the hien thi
+			int i = 0;
+			while (rs.next() && i<=4) {
+				p = new phoneDtl();
+				p.setpId(rs.getInt(1));
+				p.setPname(rs.getString(2));
+				p.setBrand(rs.getString(3));
+				p.setPrice(rs.getString(4));
+				p.setDescription(rs.getString(5));
+				p.setMemory(rs.getString(6));
+				p.setOperating(rs.getString(7));
+				p.setImg(rs.getString(8));
+				p.setGmail(rs.getString(9));
+				list.add(p);
+				i++;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return list;
+
+	}
+
+	
+
+	@Override
+	public List<phoneDtl> getOtherPhone() {
+		List<phoneDtl> list = new ArrayList<phoneDtl>();
+		phoneDtl p = null;
+		
+		try {
+			String sql = "SELECT * FROM phone_dtls WHERE operating=? ORDER BY id DESC";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setString(1, "Other");
+			ResultSet rs = ps.executeQuery();
+			
+			// so luong co the hien thi
+			int i = 0;
+			while (rs.next() && i<=4) {
+				p = new phoneDtl();
+				p.setpId(rs.getInt(1));
+				p.setPname(rs.getString(2));
+				p.setBrand(rs.getString(3));
+				p.setPrice(rs.getString(4));
+				p.setDescription(rs.getString(5));
+				p.setMemory(rs.getString(6));
+				p.setOperating(rs.getString(7));
+				p.setImg(rs.getString(8));
+				p.setGmail(rs.getString(9));
+				list.add(p);
+				i++;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return list;
+	}
+
+	@Override
+	public List<phoneDtl> getPkPhone() {
+		List<phoneDtl> list = new ArrayList<phoneDtl>();
+		phoneDtl p = null;
+		
+		try {
+			String sql = "SELECT * FROM phone_dtls WHERE operating=? ORDER BY id DESC";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setString(1, "PK");
+			ResultSet rs = ps.executeQuery();
+			
+			// so luong co the hien thi
+			int i = 0;
+			while (rs.next() && i<=4) {
+				p = new phoneDtl();
+				p.setpId(rs.getInt(1));
+				p.setPname(rs.getString(2));
+				p.setBrand(rs.getString(3));
+				p.setPrice(rs.getString(4));
+				p.setDescription(rs.getString(5));
+				p.setMemory(rs.getString(6));
+				p.setOperating(rs.getString(7));
+				p.setImg(rs.getString(8));
+				p.setGmail(rs.getString(9));
+				list.add(p);
+				i++;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return list;
+	}
+
+	@Override
+	public List<phoneDtl> getIosPhone() {
+		List<phoneDtl> list = new ArrayList<phoneDtl>();
+		phoneDtl p = null;
+		
+		try {
+			String sql = "SELECT * FROM phone_dtls WHERE operating=? ORDER BY id DESC";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setString(1, "iOS");
+			ResultSet rs = ps.executeQuery();
+			
+			// so luong co the hien thi
+			int i = 0;
+			while (rs.next() && i<=4) {
+				p = new phoneDtl();
+				p.setpId(rs.getInt(1));
+				p.setPname(rs.getString(2));
+				p.setBrand(rs.getString(3));
+				p.setPrice(rs.getString(4));
+				p.setDescription(rs.getString(5));
+				p.setMemory(rs.getString(6));
+				p.setOperating(rs.getString(7));
+				p.setImg(rs.getString(8));
+				p.setGmail(rs.getString(9));
+				list.add(p);
+				i++;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return list;
+	}
+
+	@Override
+	public List<phoneDtl> getAllAndroidPhone() {
+		List<phoneDtl> list = new ArrayList<phoneDtl>();
+		phoneDtl p = null;
+		
+		try {
+			String sql = "SELECT * FROM phone_dtls WHERE operating=? ORDER BY id DESC";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setString(1, "Android");
+			ResultSet rs = ps.executeQuery();
+			
+			// so luong co the hien thi
+			
+			while (rs.next()) {
+				p = new phoneDtl();
+				p.setpId(rs.getInt(1));
+				p.setPname(rs.getString(2));
+				p.setBrand(rs.getString(3));
+				p.setPrice(rs.getString(4));
+				p.setDescription(rs.getString(5));
+				p.setMemory(rs.getString(6));
+				p.setOperating(rs.getString(7));
+				p.setImg(rs.getString(8));
+				p.setGmail(rs.getString(9));
+				list.add(p);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return list;
+
+	}
+
+	@Override
+	public List<phoneDtl> getAllIosPhone() {
+		List<phoneDtl> list = new ArrayList<phoneDtl>();
+		phoneDtl p = null;
+		
+		try {
+			String sql = "SELECT * FROM phone_dtls WHERE operating=? ORDER BY id DESC";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setString(1, "iOS");
+			ResultSet rs = ps.executeQuery();
+			
+			// so luong co the hien thi
+			
+			while (rs.next()) {
+				p = new phoneDtl();
+				p.setpId(rs.getInt(1));
+				p.setPname(rs.getString(2));
+				p.setBrand(rs.getString(3));
+				p.setPrice(rs.getString(4));
+				p.setDescription(rs.getString(5));
+				p.setMemory(rs.getString(6));
+				p.setOperating(rs.getString(7));
+				p.setImg(rs.getString(8));
+				p.setGmail(rs.getString(9));
+				list.add(p);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return list;
+	}
+
+	@Override
+	public List<phoneDtl> getAllOtherPhone() {
+		List<phoneDtl> list = new ArrayList<phoneDtl>();
+		phoneDtl p = null;
+		
+		try {
+			String sql = "SELECT * FROM phone_dtls WHERE operating=? ORDER BY id DESC";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setString(1, "Other");
+			ResultSet rs = ps.executeQuery();
+			
+			// so luong co the hien thi
+			
+			while (rs.next()) {
+				p = new phoneDtl();
+				p.setpId(rs.getInt(1));
+				p.setPname(rs.getString(2));
+				p.setBrand(rs.getString(3));
+				p.setPrice(rs.getString(4));
+				p.setDescription(rs.getString(5));
+				p.setMemory(rs.getString(6));
+				p.setOperating(rs.getString(7));
+				p.setImg(rs.getString(8));
+				p.setGmail(rs.getString(9));
+				list.add(p);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return list;
+	}
+
+	@Override
+	public List<phoneDtl> getAllPkPhone() {
+		List<phoneDtl> list = new ArrayList<phoneDtl>();
+		phoneDtl p = null;
+		
+		try {
+			String sql = "SELECT * FROM phone_dtls WHERE operating=? ORDER BY id DESC";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setString(1, "PK");
+			ResultSet rs = ps.executeQuery();
+			
+			// so luong co the hien thi
+			
+			while (rs.next()) {
+				p = new phoneDtl();
+				p.setpId(rs.getInt(1));
+				p.setPname(rs.getString(2));
+				p.setBrand(rs.getString(3));
+				p.setPrice(rs.getString(4));
+				p.setDescription(rs.getString(5));
+				p.setMemory(rs.getString(6));
+				p.setOperating(rs.getString(7));
+				p.setImg(rs.getString(8));
+				p.setGmail(rs.getString(9));
+				list.add(p);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return list;
+	}
+
 	
 }
