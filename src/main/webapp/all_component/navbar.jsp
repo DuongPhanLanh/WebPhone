@@ -1,16 +1,30 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+<%@page isELIgnored="false" %>
 <div class="container-fluid p-3">
 	<div class="row">
 		<div class="col-md-3">
 			<h3>13_GroupPhone</h3>			
 		</div>
 		<div class="col-md-6"></div>
-		<div class="col-md-3">
+		
+		<c:if test="${not empty userobj }">
+			<div class="col-md-3">
+			<a href="cart.jsp" class="btn btn-primary"><i class="fa-solid fa-cart-plus"></i> Giỏ hàng</a>
+			<a href="home.jsp" class="btn btn-warning">${userobj.name }</a>
+			<a href="#" class="btn btn-warning"> Đăng xuất</a>
+			</div>
+		
+		</c:if>
+		
+		<c:if test="${empty userobj }">
+			<div class="col-md-3">
 			<a href="login.jsp" class="btn btn-outline-warning"> Đăng nhập</a>
 			<a href="register.jsp" class="btn btn-outline-warning"> Đăng ký</a>
-		</div>
+			</div>
 		
+		</c:if>
+	
 	</div>
 </div>
 
@@ -50,10 +64,6 @@
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit" >Search</button>
-      
-      	<div class="col-md-3">
-			<a href="" class="btn btn-primary"><i class="fa-solid fa-cart-plus"></i> Giỏ hàng</a>
-		</div>
 		
 		<div class="col-md-3">
 			<a href="" class="btn btn-warning"><i class="fa-solid fa-phone"></i> Hỗ trợ khách hàng</a>

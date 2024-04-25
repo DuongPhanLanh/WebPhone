@@ -68,7 +68,7 @@ background: #e8eaf6;
 					<%
 					} else {
 					%>
-						<a href="cartServlet" class="btn btn-danger btn-sm ml-2">Add Cart</a>
+						<a href="cart?pid=<%=p.getpId()%>&&uid=<%=u.getId()%>" class="btn btn-danger btn-sm ml-2">Add Cart</a>
 					<%}
 					
 					%>
@@ -122,7 +122,7 @@ background: #e8eaf6;
 					<%
 					} else {
 					%>
-						<a href="cartServlet" class="btn btn-danger btn-sm ml-2">Add Cart</a>
+						<a href="cart?pid=<%=p.getpId()%>&&uid=<%=u.getId()%>" class="btn btn-danger btn-sm ml-2">Add Cart</a>
 					<%}
 					
 					%>
@@ -177,7 +177,7 @@ background: #e8eaf6;
 					<%
 					} else {
 					%>
-						<a href="cartServlet" class="btn btn-danger btn-sm ml-2">Add Cart</a>
+						<a href="cart?pid=<%=p.getpId()%>&&uid=<%=u.getId()%>" class="btn btn-danger btn-sm ml-2">Add Cart</a>
 					<%}
 					
 					%>
@@ -231,7 +231,7 @@ background: #e8eaf6;
 					<%
 					} else {
 					%>
-						<a href="cartServlet" class="btn btn-danger btn-sm ml-2">Add Cart</a>
+						<a href="cart?pid=<%=p.getpId()%>&&uid=<%=u.getId()%>" class="btn btn-danger btn-sm ml-2">Add Cart</a>
 					<%}
 					
 					%>

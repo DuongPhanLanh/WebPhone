@@ -38,14 +38,14 @@ public class LoginServlet extends HttpServlet {
 				user us=dao.login(gmail, password);
 				if(us!=null) {
 					session.setAttribute("userobj", us);
-					resp.sendRedirect("home.jsp");
+					resp.sendRedirect("index.jsp");
 				}else {
 					session.setAttribute("failedLog", "Đăng nhập ko hợp lệ");
 					resp.sendRedirect("login.jsp");
 				}
 				
 				
-				resp.sendRedirect("home.jsp");
+				//resp.sendRedirect("home.jsp");
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
