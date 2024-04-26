@@ -417,5 +417,44 @@ public class phoneDAOImpl implements phoneDAO {
 		return list;
 	}
 
+	@Override
+	public List<phoneDtl> getPhoneBySearch(String ch) {
+		List<phoneDtl> list = new ArrayList<phoneDtl>();
+		phoneDtl p = null;
+		
+		try {
+			// String sql = "SELECT * FROM phone_dtls WHERE Pname like ?  brand like ? description like ? memory like ? ";
+			String sql = "SELECT * FROM phone_dtls WHERE pname LIKE ? OR brand LIKE ? OR description LIKE ? OR memory LIKE ?";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			
+			ps.setString(1, "%"+ch+"%");
+			ps.setString(2, "%"+ch+"%");
+			ps.setString(3, "%"+ch+"%");
+			ps.setString(4, "%"+ch+"%");
+			
+			
+			ResultSet rs = ps.executeQuery();
+			
+			// so luong co the hien thi
+			
+			while (rs.next()) {
+				p = new phoneDtl();
+				p.setpId(rs.getInt(1));
+				p.setPname(rs.getString(2));
+				p.setBrand(rs.getString(3));
+				p.setPrice(rs.getString(4));
+				p.setDescription(rs.getString(5));
+				p.setMemory(rs.getString(6));
+				p.setOperating(rs.getString(7));
+				p.setImg(rs.getString(8));
+				p.setGmail(rs.getString(9));
+				list.add(p);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return list;
+	}
+
 	
 }

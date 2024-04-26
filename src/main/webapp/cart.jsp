@@ -27,7 +27,7 @@
 					
 	<c:if test="${not empty falseU }">
 		<div class="alert alert-success" role="alert">${falseU }</div>
-		<c:remove var="trueU " scope="session"/>
+		<c:remove var="falseU " scope="session"/>
 	</c:if>
 <br>
 <div class="container">
@@ -89,51 +89,56 @@
 			<div class="card">
 				<div class="card-body">
 				<h4 class="text-center">Nhập thông tin nơi nhận</h4>
-					<form>
+				
+					<form action="orderAll" method="post">
+					
+					<input type="hidden" name="oid" value="${userobj.id }">	
 					  <div class="form-row">
-					    <div class="form-group col-md-6">
-					      <label for="inputEmail4">Email</label>
-					      <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+					  
+					    <div class="form-group col-md-6">					    
+					      	<label for="exampleInputEmail1">Nhập Email </label>
+					    	<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+					    	 name="oGmail" value="${userobj.gmail }" required>
 					    </div>
+					    
 					    <div class="form-group col-md-6">
-					      <label for="inputPassword4">Password</label>
-					      <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
-					    </div>
+					      	<label for="exampleInputEmail1">Tên người dùng </label>
+						    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+						    name="oName" value="${userobj.name }" required>
+					    </div>					    
 					  </div>
+					  
 					  <div class="form-group">
-					    <label for="inputAddress">Address</label>
-					    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+					    <label for="exampleInputEmail1">Số điện thoại </label>
+					    <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+					     name="oPhone" value="${userobj.phone }" required>
 					  </div>
+					  
 					  <div class="form-group">
-					    <label for="inputAddress2">Address 2</label>
-					    <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+					    <label for="inputAddress2">Nhập Địa chỉ giao hàng</label>
+					    <input type="text" class="form-control" id="inputAddress2" placeholder="số nhà/tên đường, phường/xã, quận/huyện, thành phố"
+					     name="oAddress" required>
 					  </div>
-					  <div class="form-row">
-					    <div class="form-group col-md-6">
-					      <label for="inputCity">City</label>
-					      <input type="text" class="form-control" id="inputCity">
-					    </div>
-					    <div class="form-group col-md-4">
-					      <label for="inputState">State</label>
-					      <select id="inputState" class="form-control">
-					        <option selected>Choose...</option>
-					        <option>...</option>
+					  
+					  <div class="form-group">
+					    <label for="exampleInputEmail1">Nhập ngày muốn đặt</label>
+					    <input type="text" class="form-control" id="exampleInputEmail1" 
+					    placeholder="DD/MM/YY"  name="oDayBuy" required>
+					  </div>
+					  
+					    <div class="form-group">
+					      <label for="inputState">Tính tiền</label>
+					      <select id="inputState" class="form-control" name="oPayment" required>
+					      	<option value="Null">--Loại giao dịch--</option>
+					        <option value="CK">Chuyển khoản</option>
+					        <option value="TM">Tiền mặt</option>
 					      </select>
 					    </div>
-					    <div class="form-group col-md-2">
-					      <label for="inputZip">Zip</label>
-					      <input type="text" class="form-control" id="inputZip">
-					    </div>
-					  </div>
-					  <div class="form-group">
-					    <div class="form-check">
-					      <input class="form-check-input" type="checkbox" id="gridCheck">
-					      <label class="form-check-label" for="gridCheck">
-					        Check me out
-					      </label>
-					    </div>
-					  </div>
-					  <button type="submit" class="btn btn-primary">Sign in</button>
+						
+						<div class="text-center">
+							<button type="submit" class="btn btn-primary">Order ngay</button>
+							<a href="index.jsp" class="btn btn-success">Shopping more</a>
+						</div>
 					</form>
 				
 				</div>

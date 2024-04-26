@@ -1,3 +1,4 @@
+<%@page import="java.util.ArrayList"%>
 <%@page import="com.entity.phoneOrder"%>
 <%@page import="java.util.List"%>
 <%@page import="com.DB.DBConnect"%>
@@ -8,29 +9,23 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sản phẩm được mua</title>
-<%@include file="allCss.jsp" %>
+<title>Mặt hàng đã mua</title>
+<%@include file="all_component/allCss.jsp" %>
 </head>
 <body>
-<%@include file="navbar.jsp" %>
-
-<h2 class="text-center"> Tất cả các sản phẩm đã được đặt mua</h2>
+<%@include file="all_component/navbar.jsp" %>
 <br>
-	<table class="table table-bordered">
-	  <thead class="thead-light">
+	<table class="table table-sm ">
+	  <thead class="table-primary">
 	    <tr>
-	      <th scope="col">ID</th>
 	      <th scope="col">order ID</th>
-	      <th scope="col">Tên người mua</th>
-	      <th scope="col">Gmail</th>
-	      <th scope="col">Địa chỉ</th>
-	      <th scope="col">Số điện thoại</th>
 	      <th scope="col">Tên mặt hàng</th>
 	      <th scope="col">Hãng sản xuất</th>
 	      <th scope="col">Thành tiền</th>
 	      <th scope="col">Ngày mua</th>
 	      <th scope="col">Hình thức trả tiền</th>
+	      
+	      
 	    </tr>
 	  </thead>
 	  <tbody>
@@ -38,17 +33,11 @@
 	  <%
 	  	user u = (user)session.getAttribute("userobj");
 	  	phoneOrderDAOImpl dao = new phoneOrderDAOImpl(DBConnect.getConn());
-	  	List<phoneOrder> plist = dao.getPhoneForAddmin();
+	  	List<phoneOrder> plist = dao.getPhone(u.getGmail());
 	  	for(phoneOrder p : plist) 
 	  	{%>
 	  	<tr>
-	      <th scope="row"><%=p.getId() %></th>
-	      <td><%=p.getOrderid() %></td>
-	      <td><%=p.getoName() %></td>
-	      <td><%=p.getoGmail() %></td>
-	      <td><%=p.getoAddress() %></td>
-	      <td><%=p.getoNumPhone() %></td>
-	    
+	      <th scope="row"><%=p.getOrderid() %></th>
 	      <td><%=p.getoNamePhone() %></td>
 	      <td><%=p.getoBrand() %></td>
 	      <td><%=p.getoPrice() %></td>
@@ -58,8 +47,10 @@
 	  	<%}
 	  
 	  %>
+	    
 	  </tbody>
 	</table>
-<%@include file="footer.jsp" %>
+<br>
+<%@include file="all_component/footer.jsp" %>
 </body>
 </html>

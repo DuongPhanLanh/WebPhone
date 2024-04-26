@@ -12,6 +12,7 @@
 <meta charset="UTF-8">
 <title>Phụ kiện</title>
 <%@include file="all_component/allCss.jsp" %>
+<!-- 
 <style type="text/css">
 .crd-ho:hover {
 	background-color: #eeeeee;
@@ -58,11 +59,13 @@ to {
 }
 
 </style>
+ -->
+
 </head>
 <body>
 
 
-	
+<!-- 
 <c:if test="${addPKCart }">
 
 <div id="toast">${addPKCart}</div>
@@ -80,6 +83,8 @@ to {
 </script>
 
 </c:if>
+ -->	
+
 	
 
 	<%

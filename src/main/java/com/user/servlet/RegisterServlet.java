@@ -43,20 +43,27 @@ public class RegisterServlet extends HttpServlet {
 			{
 				
 				userDAOImpl dao=new userDAOImpl(DBConnect.getConn());
-				boolean f=dao.userRegister(us);
+				boolean f2=dao.checkUser(gmail);
 				
-				if(f) {
-					//System.out.println("true");
-					session.setAttribute("trueMess","Register successfull");
-					resp.sendRedirect("submit.jsp");
+				if(f2) {
+					boolean f=dao.userRegister(us);
+					
+					if(f) {
+						//System.out.println("true");
+						session.setAttribute("trueMess","Register successfull");
+						resp.sendRedirect("submit.jsp");
+					}else {
+						//System.out.println("false");
+						session.setAttribute("failMess","Somethinng wrong on server");
+						resp.sendRedirect("register.jsp");
+					}
 				}else {
-					//System.out.println("false");
-					session.setAttribute("failMess","Somethinng wrong on server");
+					session.setAttribute("failMess","Please check, because Gmail already exists");
 					resp.sendRedirect("register.jsp");
 				}
 				
 			}else {
-				session.setAttribute("failMess","Please Check");
+				session.setAttribute("failMess","Please check");
 				resp.sendRedirect("register.jsp");
 			}
 			

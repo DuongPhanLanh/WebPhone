@@ -18,8 +18,8 @@
 				<h4 class="text-center">Đăng ký</h4>
 				
 				
-				<c:if test="${not empty failedMess }">
-					<h5 class="text-center text-danger">${failedMess}</h5>
+				<c:if test="${not empty failMess }">
+					<h5 class="text-center text-danger">${failMess}</h5>
 					<c:remove var="failedMes" scope="session"/>
 				</c:if>
 				 

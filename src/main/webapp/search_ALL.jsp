@@ -10,9 +10,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Dòng Android</title>
+<title>Tìm kiếm</title>
 
-
+	
 <%@include file="all_component/allCss.jsp" %>
 <!-- 
 <style type="text/css">
@@ -62,13 +62,14 @@ to {
 
 </style>
  -->
+
 </head>
 <body>
 
 <!-- 
-<c:if test="${addAndroidCart }">
+<c:if test="${addIOSCart }">
 
-<div id="toast">${addAndroidCart}</div>
+<div id="toast">${addIOSCart}</div>
 
 <script type="text/javascript">
 		showToast();
@@ -83,19 +84,23 @@ to {
 </script>
 
 </c:if>
- -->
+ -->	
 
-
+	
+	
 	<%
 		user u =(user)session.getAttribute("userobj");
 	%>
+
 <%@include file="all_component/navbar.jsp" %>
 	<div class="container">
-	<h3 class="text-center">Adroid</h3>
+	<h3 class="text-center">Kết quả</h3>
 	<div class="row">
 	<%
-		phoneDAOImpl dao = new phoneDAOImpl(DBConnect.getConn());
-		List<phoneDtl> list = dao.getAndroidPhone();
+		String ch = request.getParameter("timKiem");
+	
+		phoneDAOImpl dao = new phoneDAOImpl(DBConnect.getConn());		
+		List<phoneDtl> list = dao.getPhoneBySearch(ch);
 		for(phoneDtl p : list)
 	{%>
 	<div class="col-md-3">
@@ -135,6 +140,7 @@ to {
 	
 			
 	</div>
+	
 </div>	
 </body>
 </html>

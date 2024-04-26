@@ -14,6 +14,7 @@
 
 	
 <%@include file="all_component/allCss.jsp" %>
+<!-- 
 <style type="text/css">
 .crd-ho:hover {
 	background-color: #eeeeee;
@@ -60,10 +61,12 @@ to {
 }
 
 </style>
+ -->
+
 </head>
 <body>
 
-	
+<!-- 
 <c:if test="${addIOSCart }">
 
 <div id="toast">${addIOSCart}</div>
@@ -81,6 +84,8 @@ to {
 </script>
 
 </c:if>
+ -->	
+
 	
 	
 	<%

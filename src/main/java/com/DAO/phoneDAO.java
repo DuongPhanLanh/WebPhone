@@ -30,4 +30,6 @@ public interface phoneDAO {
 	public List<phoneDtl> getAllOtherPhone();
 	
 	public List<phoneDtl> getAllPkPhone();
+	
+	public List<phoneDtl> getPhoneBySearch(String ch);
 }

@@ -111,4 +111,23 @@ public class userDAOImpl implements userDAO{
 		return f;
 	}
 
+	@Override
+	public boolean checkUser(String me) {
+		boolean f = true;
+		try {
+			String sql="select * from user where gmail=?";
+			PreparedStatement ps=conn.prepareStatement(sql);
+			
+			ps.setString(1, me);
+			
+			ResultSet rs=ps.executeQuery();
+			while (rs.next()) {
+				f = false;				
+			}		
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return f;
+	}
+
 }
