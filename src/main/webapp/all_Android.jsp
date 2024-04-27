@@ -14,7 +14,7 @@
 
 
 <%@include file="all_component/allCss.jsp" %>
-<!-- 
+
 <style type="text/css">
 .crd-ho:hover {
 	background-color: #eeeeee;
@@ -61,12 +61,12 @@ to {
 }
 
 </style>
- -->
+
 </head>
 <body>
 
-<!-- 
-<c:if test="${addAndroidCart }">
+ 
+<c:if test="${not empty addAndroidCart }">
 
 <div id="toast">${addAndroidCart}</div>
 
@@ -83,7 +83,6 @@ to {
 </script>
 
 </c:if>
- -->
 
 
 	<%
@@ -116,7 +115,8 @@ to {
 					<%
 					} else {
 					%>
-						<a href="cart?pid=<%=p.getpId()%>&&uid=<%=u.getId()%>" class="btn btn-danger btn-sm ml-2">Add Cart</a>
+						<a href="cart?pid=<%=p.getpId()%>&&uid=<%=u.getId()%>" class="btn btn-danger btn-sm ml-2"
+						>Add Cart</a>
 					<%}
 					
 					%>
@@ -134,7 +134,9 @@ to {
 		
 	
 			
-	</div>
+	</div>	
 </div>	
+
+
 </body>
 </html>

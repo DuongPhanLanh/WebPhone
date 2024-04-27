@@ -12,7 +12,9 @@
 			<div class="col-md-3">
 			<a href="cart.jsp" class="btn btn-primary"><i class="fa-solid fa-cart-plus"></i> Giỏ hàng</a>
 			<a href="home.jsp" class="btn btn-warning">${userobj.name }</a>
-			<a href="#" class="btn btn-warning"> Đăng xuất</a>
+			<a data-toggle="modal" data-target="#exampleModalCenter"
+							class="btn btn-primary text-white"><i 
+							class="fa fa-sign-in-alt"></i> Đăng xuất</a>
 			</div>
 		
 		</c:if>
@@ -27,6 +29,50 @@
 	
 	</div>
 </div>
+
+<!-- Logout model -->
+
+<!--logOut model -->
+
+<!--
+	<button type="button" 
+	
+	class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"
+	
+	>
+	  Launch demo modal
+	</button>
+  -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" 
+	role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+	
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Thông báo</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body ">
+      	<div class="text-center">
+	        <h4>Bạn muốn đăng xuất</h4>
+	        <button type="button" class="btn btn-secondary" data-dismiss="modal">Quay lại</button>
+	        <a href="logOut" type="button" class="btn btn-primary">Đồng ý</a>
+        </div>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- oooooooooooo -->
+
 
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-blue">

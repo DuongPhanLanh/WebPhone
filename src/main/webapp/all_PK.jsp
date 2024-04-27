@@ -12,7 +12,7 @@
 <meta charset="UTF-8">
 <title>Phụ kiện</title>
 <%@include file="all_component/allCss.jsp" %>
-<!-- 
+ 
 <style type="text/css">
 .crd-ho:hover {
 	background-color: #eeeeee;
@@ -59,14 +59,14 @@ to {
 }
 
 </style>
- -->
+
 
 </head>
 <body>
 
 
-<!-- 
-<c:if test="${addPKCart }">
+
+<c:if test="${not empty addPKCart }">
 
 <div id="toast">${addPKCart}</div>
 
@@ -83,7 +83,7 @@ to {
 </script>
 
 </c:if>
- -->	
+	
 
 	
 
@@ -118,7 +118,8 @@ to {
 					<%
 					} else {
 					%>
-						<a href="cart?pid=<%=p.getpId()%>&&uid=<%=u.getId()%>" class="btn btn-danger btn-sm ml-2">Add Cart</a>
+						<a href="cart?pid=<%=p.getpId()%>&&uid=<%=u.getId()%>" class="btn btn-danger btn-sm ml-2"
+						data-toggle="modal" data-target="#exampleModal">Add Cart</a>
 					<%}
 					
 					%>
@@ -137,5 +138,7 @@ to {
 	
 </div>			
 </div>	
+
+
 </body>
 </html>

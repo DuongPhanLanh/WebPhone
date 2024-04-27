@@ -12,7 +12,7 @@
 <meta charset="UTF-8">
 <title>Dòng khác</title>
 <%@include file="all_component/allCss.jsp" %>
-<!-- 
+ 
 <style type="text/css">
 .crd-ho:hover {
 	background-color: #eeeeee;
@@ -59,13 +59,13 @@ to {
 }
 
 </style>
- -->
+
 
 </head>
 <body>
 
-<!-- 
-<c:if test="${addOtherCart }">
+ 
+<c:if test="${not empty addOtherCart }">
 
 <div id="toast">${addOtherCart}</div>
 
@@ -82,7 +82,7 @@ to {
 </script>
 
 </c:if>
- -->	
+	
 
 	
 
@@ -137,6 +137,8 @@ to {
 </div>	
 
 </div>	
+
+
 	
 </body>
 </html>
